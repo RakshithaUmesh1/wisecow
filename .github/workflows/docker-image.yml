@@ -41,7 +41,6 @@ jobs:
           version: 'latest'
 
       - name: Deploy to Kubernetes cluster
-        env:
-          KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
-          kubectl apply -f k8s/wisecow.yaml
+          echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
+          kubectl --kubeconfig=kubeconfig.yaml apply -f k8s/wisecow.yaml

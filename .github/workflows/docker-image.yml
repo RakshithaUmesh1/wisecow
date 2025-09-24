@@ -43,7 +43,7 @@ jobs:
           aws-region: us-west-2  # change to your AWS region
 
       - name: Update kubeconfig for EKS
-        run: aws eks update-kubeconfig --name your-eks-cluster-name --region us-west-2
+        run: aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
 
       - name: Deploy to Kubernetes cluster
         run: kubectl apply -f k8s/wisecow.yaml

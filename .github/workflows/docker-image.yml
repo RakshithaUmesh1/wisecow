@@ -42,5 +42,5 @@ jobs:
 
       - name: Deploy to Kubernetes cluster
         run: |
-          echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
-          kubectl --kubeconfig=kubeconfig.yaml apply -f k8s/wisecow.yaml
+          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > kubeconfig.yaml
+          kubectl --kubeconfig=kubeconfig.yaml apply -f k8s/wisecow.yam

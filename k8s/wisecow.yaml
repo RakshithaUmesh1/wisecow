@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: wisecow
-        image: manojkrishnappa/wisecow:latest
+        image: rakshithaghyanesh/wisecow:latest
         ports:
         - containerPort: 4499
 
 ---
 apiVersion: v1
-kind: Service
+kind: Service 
 metadata:
   name: wisecow-service
 spec:
